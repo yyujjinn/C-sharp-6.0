@@ -1,15 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace chapter4
+delegate int Transformer(int x);
+
+class Test
 {
-    class Program
+    static void Main()
     {
-        static void Main(string[] args)
-        {
-        }
+        Transformer t = Square;         // 대리자 인스턴스 생성
+        int result = t(3);              // 대리자 호출
+        Console.WriteLine(result);      // 9
     }
+    static int Square(int x) => x * x;
 }
